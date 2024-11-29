@@ -1,0 +1,87 @@
+
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family:Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family:Arial, sans-serif;
+    font-size: 1.95em;
+}
+p {
+    margin-bottom: 15px;
+  }
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  figure {
+    margin: 0;
+    text-align: center;
+  }
+img{
+    border: 5px solid blue;
+    border-radius: 10px;
+    width: 100%;
+  }
+figcaption {
+    margin-top: 5px;
+    font-size: 0.9em;
+  }
+/* Vue tablette : À partir de 772px */
+@media (min-width: 772px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    img {
+      border-radius: 50%;
+    }
+  
+    .grid figure:last-child {
+      grid-column: span 2;
+    }
+  }
+  
+  /* Vue grand écran : À partir de 992px */
+  @media (min-width: 992px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    img {
+      border-radius: 0;
+    }
+  
+    .grid figure:nth-child(3n) {
+      grid-column: span 2;
+    }
+  }
+  
+  /* Préférences : réduit les animations */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  
+  /* Mode sombre */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+  
+    img {
+      border-color: black;
+    }
+  
+    figcaption {
+      color: yellow;
+    }
+  }
